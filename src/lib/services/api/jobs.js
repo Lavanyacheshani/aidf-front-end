@@ -1,6 +1,6 @@
 export const getJobs = async () => {
   const res = await fetch(
-    "http://localhost:8000/jobs",
+    "https://aidf-back-end-march-production.up.railway.app/jobs",
     {
       method: "GET",
     }
@@ -12,7 +12,7 @@ export const getJobs = async () => {
 export const getJobById = async (id) => {
   const token = await window.Clerk.session.getToken();
   
-  const res = await fetch(`http://localhost:8000/jobs/${id}`, {
+  const res = await fetch(`https://aidf-back-end-march-production.up.railway.app/jobs/${id}`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -32,7 +32,7 @@ export const createJob = async ({
 }) => {
   const token = await window.Clerk.session.getToken();
 
-  await fetch("http://localhost:8000/jobs", {
+  await fetch("https://aidf-back-end-march-production.up.railway.app/jobs", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
